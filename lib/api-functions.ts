@@ -45,14 +45,6 @@ export async function connectionRequest(
 
   let connectionRequestUrl, udpConnectionRequestAddress, username, password;
 
-  console.log(device);
-  console.log("InternetGatewayDevice.ManagementServer.ConnectionRequestURL", ":", device["InternetGatewayDevice.ManagementServer.ConnectionRequestURL"]);
-  console.log("InternetGatewayDevice.ManagementServer.ConnectionRequestUsername", ":", device["InternetGatewayDevice.ManagementServer.ConnectionRequestUsername"]);
-  console.log("InternetGatewayDevice.ManagementServer.ConnectionRequestPassword", ":", device["InternetGatewayDevice.ManagementServer.ConnectionRequestPassword"]);
-  console.log("InternetGatewayDevice.ManagementServer.ConnectionRequestURL", ":", device["InternetGateWayDevice.ManagementServer.ConnectionRequestURL"]);
-  console.log("InternetGatewayDevice.ManagementServer.ConnectionRequestUsername", ":", device["InternetGateWayDevice.ManagementServer.ConnectionRequestUsername"]);
-  console.log("InternetGatewayDevice.ManagementServer.ConnectionRequestPassword", ":", device["InternetGateWayDevice.ManagementServer.ConnectionRequestPassword"]);
-
   if (device["InternetGatewayDevice.ManagementServer.ConnectionRequestURL"]) {
     connectionRequestUrl = (device[
       "InternetGatewayDevice.ManagementServer.ConnectionRequestURL"
@@ -70,6 +62,27 @@ export async function connectionRequest(
     password = ((
       device[
         "InternetGatewayDevice.ManagementServer.ConnectionRequestPassword"
+      ] || {}
+    ).value || [""])[0];
+  } 
+    // Raisecom is using "InternetGateWayDevice", not "InternetGatewayDevice"
+    else if (device["InternetGateWayDevice.ManagementServer.ConnectionRequestURL"]) {
+    connectionRequestUrl = (device[
+      "InternetGateWayDevice.ManagementServer.ConnectionRequestURL"
+    ].value || [""])[0];
+    udpConnectionRequestAddress = ((
+      device[
+        "InternetGateWayDevice.ManagementServer.UDPConnectionRequestAddress"
+      ] || {}
+    ).value || [""])[0];
+    username = ((
+      device[
+        "InternetGateWayDevice.ManagementServer.ConnectionRequestUsername"
+      ] || {}
+    ).value || [""])[0];
+    password = ((
+      device[
+        "InternetGateWayDevice.ManagementServer.ConnectionRequestPassword"
       ] || {}
     ).value || [""])[0];
   } else {
