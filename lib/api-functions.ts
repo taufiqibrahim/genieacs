@@ -45,6 +45,13 @@ export async function connectionRequest(
 
   let connectionRequestUrl, udpConnectionRequestAddress, username, password;
 
+  console.log("InternetGatewayDevice.ManagementServer.ConnectionRequestURL", ":", device["InternetGatewayDevice.ManagementServer.ConnectionRequestURL"]);
+  console.log("InternetGatewayDevice.ManagementServer.ConnectionRequestUsername", ":", device["InternetGatewayDevice.ManagementServer.ConnectionRequestUsername"]);
+  console.log("InternetGatewayDevice.ManagementServer.ConnectionRequestPassword", ":", device["InternetGatewayDevice.ManagementServer.ConnectionRequestPassword"]);
+  console.log("Device.ManagementServer.ConnectionRequestURL", ":", device["Device.ManagementServer.ConnectionRequestURL"]);
+  console.log("Device.ManagementServer.ConnectionRequestUsername", ":", device["Device.ManagementServer.ConnectionRequestUsername"]);
+  console.log("Device.ManagementServer.ConnectionRequestPassword", ":", device["Device.ManagementServer.ConnectionRequestPassword"]);
+
   if (device["InternetGatewayDevice.ManagementServer.ConnectionRequestURL"]) {
     connectionRequestUrl = (device[
       "InternetGatewayDevice.ManagementServer.ConnectionRequestURL"
