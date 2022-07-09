@@ -49,12 +49,9 @@ export async function connectionRequest(
   console.log("InternetGatewayDevice.ManagementServer.ConnectionRequestURL", ":", device["InternetGatewayDevice.ManagementServer.ConnectionRequestURL"]);
   console.log("InternetGatewayDevice.ManagementServer.ConnectionRequestUsername", ":", device["InternetGatewayDevice.ManagementServer.ConnectionRequestUsername"]);
   console.log("InternetGatewayDevice.ManagementServer.ConnectionRequestPassword", ":", device["InternetGatewayDevice.ManagementServer.ConnectionRequestPassword"]);
-  console.log("Device.ManagementServer.ConnectionRequestURL", ":", device["Device.ManagementServer.ConnectionRequestURL"]);
-  console.log("Device.ManagementServer.ConnectionRequestUsername", ":", device["Device.ManagementServer.ConnectionRequestUsername"]);
-  console.log("Device.ManagementServer.ConnectionRequestPassword", ":", device["Device.ManagementServer.ConnectionRequestPassword"]);
-  console.log("ManagementServer.ConnectionRequestURL", ":", device["ManagementServer.ConnectionRequestURL"]);
-  console.log("ManagementServer.ConnectionRequestUsername", ":", device["ManagementServer.ConnectionRequestUsername"]);
-  console.log("ManagementServer.ConnectionRequestPassword", ":", device["ManagementServer.ConnectionRequestPassword"]);
+  console.log("InternetGatewayDevice.ManagementServer.ConnectionRequestURL", ":", device["InternetGateWayDevice.ManagementServer.ConnectionRequestURL"]);
+  console.log("InternetGatewayDevice.ManagementServer.ConnectionRequestUsername", ":", device["InternetGateWayDevice.ManagementServer.ConnectionRequestUsername"]);
+  console.log("InternetGatewayDevice.ManagementServer.ConnectionRequestPassword", ":", device["InternetGateWayDevice.ManagementServer.ConnectionRequestPassword"]);
 
   if (device["InternetGatewayDevice.ManagementServer.ConnectionRequestURL"]) {
     connectionRequestUrl = (device[
